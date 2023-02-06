@@ -3,7 +3,6 @@
 long double s21_floor(double x) {
   long double result;
   if (s21_isinf(x)) {
-    printf("A");
     return (long double)x;
   }
   result = (int)x;

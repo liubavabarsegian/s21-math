@@ -9,6 +9,7 @@
 #define S21_INFINITY 1.0 / 0.0
 #define S21_NEGATIVE_INFINITY = -S21_INFINITY
 #define S21_E 2.71828182845904523536028747
+#define S21_NAN 0.0 / 0.0
 
 int s21_abs(int x);
 long double s21_exp(double x);

@@ -1,3 +1,5 @@
+#include <math.h>
+#include <stdlib.h>
 #include "s21_math.h"
 
 // abs
@@ -43,10 +45,11 @@ int main(void){
 // put test cases for other functions here
 
   SRunner *runner = srunner_create(s_s21_math);
-
+  // abs
   tcase_add_test(tc_abs, s21_abs_positive);
   tcase_add_test(tc_abs, s21_abs_negative);
   tcase_add_test(tc_abs, s21_abs_null);
+  // fabs
   tcase_add_test(tc_fabs, s21_fabs_positive);
   tcase_add_test(tc_fabs, s21_fabs_negative);
   tcase_add_test(tc_fabs, s21_fabs_null);

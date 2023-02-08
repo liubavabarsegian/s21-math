@@ -1,15 +1,16 @@
 #include <math.h>
 #include <stdlib.h>
 #include "s21_math.h"
+#include <check.h>
 
 // abs
 START_TEST(s21_abs_positive) {
-  int a = 1;
+  int a = 1.2345678910111213;
   ck_assert_int_eq(s21_abs(a), abs(a));
 } END_TEST
 
 START_TEST(s21_abs_negative) {
-  int a = -1;
+  int a = -1.2345678910111213;
   ck_assert_int_eq(s21_abs(a), abs(a));
 } END_TEST
 
@@ -17,19 +18,40 @@ START_TEST(s21_abs_null) {
   int a = 0;
   ck_assert_int_eq(s21_abs(a), abs(a));
 } END_TEST
+
+START_TEST(s21_abs_max_int) {
+  int a = INT_MAX;
+  ck_assert_int_eq(s21_abs(a), abs(a));
+} END_TEST
+
+START_TEST(s21_abs_min_int) {
+  int a = INT_MIN;
+  ck_assert_int_eq(s21_abs(a), abs(a));
+} END_TEST
+
 // fabs
 START_TEST(s21_fabs_positive) {
-  double a = 1;
+  double a = 1.2345678910111213;
   ck_assert_ldouble_eq(s21_fabs(a), fabs(a));
 } END_TEST
 
 START_TEST(s21_fabs_negative) {
-  double a = -1;
+  double a = -1.2345678910111213;
   ck_assert_ldouble_eq(s21_fabs(a), fabs(a));
 } END_TEST
 
 START_TEST(s21_fabs_null) {
   double a = 0;
+  ck_assert_ldouble_eq(s21_fabs(a), fabs(a));
+} END_TEST
+
+START_TEST(s21_fabs_max_int) {
+  double a = INT_MAX;
+  ck_assert_ldouble_eq(s21_fabs(a), fabs(a));
+} END_TEST
+
+START_TEST(s21_fabs_min_int) {
+  double a = INT_MIN;
   ck_assert_ldouble_eq(s21_fabs(a), fabs(a));
 } END_TEST
 
@@ -49,10 +71,14 @@ int main(void){
   tcase_add_test(tc_abs, s21_abs_positive);
   tcase_add_test(tc_abs, s21_abs_negative);
   tcase_add_test(tc_abs, s21_abs_null);
+  tcase_add_test(tc_abs, s21_abs_max_int);
+  tcase_add_test(tc_abs, s21_abs_min_int);
   // fabs
   tcase_add_test(tc_fabs, s21_fabs_positive);
   tcase_add_test(tc_fabs, s21_fabs_negative);
   tcase_add_test(tc_fabs, s21_fabs_null);
+  tcase_add_test(tc_fabs, s21_fabs_max_int);
+  tcase_add_test(tc_fabs, s21_fabs_min_int);
 // put other test adding here
 
   srunner_run_all(runner, CK_NORMAL);

@@ -7,12 +7,12 @@ long double s21_exp(double x) {
 
   long double result = 0;
   for (int i = 0; i < 200; i++) {
-    result += s21_pow_int(x, i) / s21_factorial(i);
+    result += s21_pow_int(x, i) / (long double)s21_factorial(i);
   }
   return result;
 }
 
-long double s21_factorial(long long int x) {
+long long int s21_factorial(int x) {
   if (x == 1 || x == 0) return 1;
   if (x > 1) return x * s21_factorial(x - 1);
 }

@@ -1,61 +1,72 @@
+#include <check.h>
 #include <math.h>
 #include <stdlib.h>
+
 #include "s21_math.h"
-#include <check.h>
 
 // abs
 START_TEST(s21_abs_positive) {
   int a = 1.2345678910111213;
   ck_assert_int_eq(s21_abs(a), abs(a));
-} END_TEST
+}
+END_TEST
 
 START_TEST(s21_abs_negative) {
   int a = -1.2345678910111213;
   ck_assert_int_eq(s21_abs(a), abs(a));
-} END_TEST
+}
+END_TEST
 
 START_TEST(s21_abs_null) {
   int a = 0;
   ck_assert_int_eq(s21_abs(a), abs(a));
-} END_TEST
+}
+END_TEST
 
 START_TEST(s21_abs_max_int) {
   int a = INT_MAX;
   ck_assert_int_eq(s21_abs(a), abs(a));
-} END_TEST
+}
+END_TEST
 
 START_TEST(s21_abs_min_int) {
   int a = INT_MIN;
   ck_assert_int_eq(s21_abs(a), abs(a));
-} END_TEST
+}
+END_TEST
 
 // fabs
 START_TEST(s21_fabs_positive) {
   double a = 1.2345678910111213;
   ck_assert_ldouble_eq(s21_fabs(a), fabs(a));
-} END_TEST
+}
+END_TEST
 
 START_TEST(s21_fabs_negative) {
   double a = -1.2345678910111213;
   ck_assert_ldouble_eq(s21_fabs(a), fabs(a));
-} END_TEST
+}
+END_TEST
 
 START_TEST(s21_fabs_null) {
   double a = 0;
   ck_assert_ldouble_eq(s21_fabs(a), fabs(a));
-} END_TEST
+}
+END_TEST
 
 START_TEST(s21_fabs_max_int) {
   double a = INT_MAX;
   ck_assert_ldouble_eq(s21_fabs(a), fabs(a));
-} END_TEST
+}
+END_TEST
 
 START_TEST(s21_fabs_min_int) {
   double a = INT_MIN;
   ck_assert_ldouble_eq(s21_fabs(a), fabs(a));
-} END_TEST
+}
+END_TEST
 
-int main(void){
+int main(void) {
   int failed = 0;
   Suite *s_s21_math = suite_create("s21_math.h");
   // abs
@@ -64,7 +75,7 @@ int main(void){
   // fabs
   TCase *tc_fabs = tcase_create("s21_fabs");
   suite_add_tcase(s_s21_math, tc_fabs);
-// put test cases for other functions here
+  // put test cases for other functions here
 
   SRunner *runner = srunner_create(s_s21_math);
   // abs
@@ -79,7 +90,7 @@ int main(void){
   tcase_add_test(tc_fabs, s21_fabs_null);
   tcase_add_test(tc_fabs, s21_fabs_max_int);
   tcase_add_test(tc_fabs, s21_fabs_min_int);
-// put other test adding here
+  // put other test adding here
 
   srunner_run_all(runner, CK_NORMAL);
   failed = srunner_ntests_failed(runner);
@@ -87,7 +98,7 @@ int main(void){
   return (failed == 0) ? 0 : 1;
 }
 
-//Suite *s21_abs_suite(void);
+// Suite *s21_abs_suite(void);
 
 /*
 Suite *s21_abs_suite(void){

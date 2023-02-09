@@ -15,7 +15,7 @@ long double s21_pow(double base, double exp) {
   // a^x = e ^(ln (a ^x)) = e ^(x * lna)
   result = s21_exp(exp * s21_log(base));
 
-  //negative base
+  // negative base
 
   if (is_pow_negative) {
     result = 1. / result;

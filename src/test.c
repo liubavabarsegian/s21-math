@@ -1,122 +1,34 @@
-#include <check.h>
-#include <math.h>
-#include <stdlib.h>
+#include "test_s21_math.h"
 
-#include "s21_math.h"
+//#include <stdio.h>
 
-// abs
-START_TEST(s21_abs_positive) {
-  int a = 1.2345678910111213;
-  ck_assert_int_eq(s21_abs(a), abs(a));
-}
-END_TEST
-
-START_TEST(s21_abs_negative) {
-  int a = -1.2345678910111213;
-  ck_assert_int_eq(s21_abs(a), abs(a));
-}
-END_TEST
-
-START_TEST(s21_abs_null) {
-  int a = 0;
-  ck_assert_int_eq(s21_abs(a), abs(a));
-}
-END_TEST
-
-START_TEST(s21_abs_max_int) {
-  int a = INT_MAX;
-  ck_assert_int_eq(s21_abs(a), abs(a));
-}
-END_TEST
-
-START_TEST(s21_abs_min_int) {
-  int a = INT_MIN;
-  ck_assert_int_eq(s21_abs(a), abs(a));
-}
-END_TEST
-
-// fabs
-START_TEST(s21_fabs_positive) {
-  double a = 1.2345678910111213;
-  ck_assert_ldouble_eq(s21_fabs(a), fabs(a));
-}
-END_TEST
-
-START_TEST(s21_fabs_negative) {
-  double a = -1.2345678910111213;
-  ck_assert_ldouble_eq(s21_fabs(a), fabs(a));
-}
-END_TEST
-
-START_TEST(s21_fabs_null) {
-  double a = 0;
-  ck_assert_ldouble_eq(s21_fabs(a), fabs(a));
-}
-END_TEST
-
-START_TEST(s21_fabs_max_int) {
-  double a = INT_MAX;
-  ck_assert_ldouble_eq(s21_fabs(a), fabs(a));
-}
-END_TEST
-
-START_TEST(s21_fabs_min_int) {
-  double a = INT_MIN;
-  ck_assert_ldouble_eq(s21_fabs(a), fabs(a));
-}
-END_TEST
-
-int main(void) {
+int main(void){
   int failed = 0;
   Suite *s_s21_math = suite_create("s21_math.h");
   // abs
-  TCase *tc_abs = tcase_create("s21_abs");
-  suite_add_tcase(s_s21_math, tc_abs);
+  suite_add_tcase(s_s21_math, s21_tc_abs());
+  // exp
+  suite_add_tcase(s_s21_math, s21_tc_exp());
   // fabs
-  TCase *tc_fabs = tcase_create("s21_fabs");
-  suite_add_tcase(s_s21_math, tc_fabs);
-  // put test cases for other functions here
+  suite_add_tcase(s_s21_math, s21_tc_fabs());
+  // acos
+  //suite_add_tcase(s_s21_math, *s21_tc_acos());
+  //suite_add_tcase(s_s21_math, *s21_tc_asin());
+  //suite_add_tcase(s_s21_math, *s21_tc_atan());
+  //suite_add_tcase(s_s21_math, *s21_tc_ceil());
+  //suite_add_tcase(s_s21_math, *s21_tc_cos());
+  //suite_add_tcase(s_s21_math, *s21_tc_floor());
+  //suite_add_tcase(s_s21_math, *s21_tc_fmod());
+  //suite_add_tcase(s_s21_math, *s21_tc_log());
+  //suite_add_tcase(s_s21_math, *s21_tc_pow());
+  //suite_add_tcase(s_s21_math, *s21_tc_sin());
+  //suite_add_tcase(s_s21_math, *s21_tc_sqrt());
+  //suite_add_tcase(s_s21_math, *s21_tc_tan());
 
   SRunner *runner = srunner_create(s_s21_math);
-  // abs
-  tcase_add_test(tc_abs, s21_abs_positive);
-  tcase_add_test(tc_abs, s21_abs_negative);
-  tcase_add_test(tc_abs, s21_abs_null);
-  tcase_add_test(tc_abs, s21_abs_max_int);
-  tcase_add_test(tc_abs, s21_abs_min_int);
-  // fabs
-  tcase_add_test(tc_fabs, s21_fabs_positive);
-  tcase_add_test(tc_fabs, s21_fabs_negative);
-  tcase_add_test(tc_fabs, s21_fabs_null);
-  tcase_add_test(tc_fabs, s21_fabs_max_int);
-  tcase_add_test(tc_fabs, s21_fabs_min_int);
-  // put other test adding here
 
   srunner_run_all(runner, CK_NORMAL);
   failed = srunner_ntests_failed(runner);
   srunner_free(runner);
   return (failed == 0) ? 0 : 1;
 }
-
-// Suite *s21_abs_suite(void);
-
-/*
-Suite *s21_abs_suite(void){
-  Suite *s;
-  TCase *tc_pos, *tc_neg, *tc_nul;
-
-  s = suite_create("s21_abs");
-  tc_pos = tcase_create("Positive");
-  tcase_add_test(tc_pos, positive);
-  suite_add_tcase(s, tc_pos);
-
-//  tc_neg = tcase_create("negative");
-//  tcase_add_test(tc_neg, negative);
-//  suite_add_tcase(s, tc_neg);
-//
-//  tc_nul = tcase_create("null");
-//  tcase_add_test(tc_nul, null);
-//  suite_add_tcase(s, tc_nul);
-
-  return s;
-}*/

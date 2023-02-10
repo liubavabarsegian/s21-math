@@ -1,4 +1,4 @@
-#include "math.h"
+#include "s21_math.h"
 
 long double s21_ceil(double x) {
   if (s21_isnan(x) || s21_isinf(x)) return x;

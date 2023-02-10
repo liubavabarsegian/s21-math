@@ -30,6 +30,7 @@ tcase :
 	$(CMPLR) -c ./test_cases/case_s21_abs.c
 	$(CMPLR) -c ./test_cases/case_s21_exp.c
 	$(CMPLR) -c ./test_cases/case_s21_fabs.c
+#add new test_cases for other functions here
 
 check_style:
 	cp ../materials/linters/.clang-format ../src

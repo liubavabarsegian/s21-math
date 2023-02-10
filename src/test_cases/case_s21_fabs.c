@@ -28,6 +28,12 @@ START_TEST(s21_fabs_dbl_min) {
 }
 END_TEST
 
+START_TEST(s21_fabs_nan) {
+  double a = NAN;
+  ck_assert_ldouble_nan(s21_fabs(a));
+}
+END_TEST
+
 TCase *s21_tc_fabs(void){
   TCase *tc_fabs = tcase_create("s21_fabs");
   
@@ -36,6 +42,7 @@ TCase *s21_tc_fabs(void){
   tcase_add_test(tc_fabs, s21_fabs_null);
   tcase_add_test(tc_fabs, s21_fabs_dbl_max);
   tcase_add_test(tc_fabs, s21_fabs_dbl_min);
+  tcase_add_test(tc_fabs, s21_fabs_nan);
   
   return tc_fabs;
 }

@@ -1,6 +1,5 @@
 #include <math.h>
-#include <stdlib.h>
-#include <limits.h>
+#include <check.h>
 #include "s21_math.h"
 
 TCase *s21_tc_abs(void);

@@ -3,6 +3,7 @@
 
 #include <limits.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 #define s21_isnan(x) __builtin_isnan(x)
 #define s21_isinf(x) __builtin_isinf(x)

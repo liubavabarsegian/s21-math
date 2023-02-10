@@ -15,4 +15,5 @@ long double s21_exp(double x) {
 long long int s21_factorial(int x) {
   if (x == 1 || x == 0) return 1;
   if (x > 1) return x * s21_factorial(x - 1);
+  return S21_NAN;
 }

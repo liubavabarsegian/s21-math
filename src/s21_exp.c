@@ -1,3 +1,4 @@
+#include <float.h>
 #include "s21_math.h"
 
 //для больших отрицательных чисел не работает походу
@@ -7,9 +8,6 @@ long double s21_exp(double x) {
     int i = 1;
     if (x == -S21_INFINITY) return 0;
     if (x == S21_INFINITY) return S21_INFINITY;
-    if (x < 0) {
-        int flag = 1;
-    }
     //for (int i = 0; i < 200; i++) {
     while (s21_fabs(result) > S21_EPS) {
         result = result * x / i;
@@ -17,15 +15,13 @@ long double s21_exp(double x) {
         sum += result; 
         if (sum > DBL_MAX) {
             sum = S21_INFINITY;
+            if (x < 0) {
+                sum = 1 / sum;
+            }
             break;
         }
-    if (flag == 1) {
-        if (sum > DBL_MAX) {
-            sum = 0;
-        }
     }
-  }
-  return sum;
+    return sum;
 }
 
 //long long int s21_factorial(int x) {

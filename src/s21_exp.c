@@ -7,8 +7,10 @@ long double s21_exp(double x) {
     int i = 1;
     if (x == -S21_INFINITY) return 0;
     if (x == S21_INFINITY) return S21_INFINITY;
-  long double result = 0;
-  //for (int i = 0; i < 200; i++) {
+    if (x < 0) {
+        int flag = 1;
+    }
+    //for (int i = 0; i < 200; i++) {
     while (s21_fabs(result) > S21_EPS) {
         result = result * x / i;
         i += 1;
@@ -17,6 +19,11 @@ long double s21_exp(double x) {
             sum = S21_INFINITY;
             break;
         }
+    if (flag == 1) {
+        if (sum > DBL_MAX) {
+            sum = 0;
+        }
+    }
   }
   return sum;
 }

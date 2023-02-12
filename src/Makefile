@@ -10,6 +10,9 @@ s21_math.a :
 	$(CMPLR) -c s21_fabs.c
 	$(CMPLR) -c s21_floor.c
 	$(CMPLR) -c s21_ceil.c
+	$(CMPLR) -c s21_sin.c
+	$(CMPLR) -c s21_cos.c
+	$(CMPLR) -c s21_tan.c
 #add new fuction here
 	ar rc s21_math.a *.o
 	ranlib s21_math.a
@@ -25,6 +28,9 @@ gcov_report : tcase
 	$(CMPLR) $(GCOV_FLAGS) -c s21_fabs.c
 	$(CMPLR) $(GCOV_FLAGS) -c s21_floor.c
 	$(CMPLR) $(GCOV_FLAGS) -c s21_ceil.c
+	$(CMPLR) $(GCOV_FLAGS) -c s21_sin.c
+	$(CMPLR) $(GCOV_FLAGS) -c s21_cos.c
+	$(CMPLR) $(GCOV_FLAGS) -c s21_tan.c
 #add new fuction here
 	$(CMPLR) $(GCOV_FLAGS) *.o $(TEST_FLAGS) -o test
 	./test
@@ -38,6 +44,9 @@ tcase :
 	$(CMPLR) -c ./test_cases/case_s21_fabs.c
 	$(CMPLR) -c ./test_cases/case_s21_floor.c
 	$(CMPLR) -c ./test_cases/case_s21_ceil.c
+	$(CMPLR) -c ./test_cases/case_s21_sin.c
+	$(CMPLR) -c ./test_cases/case_s21_cos.c
+	$(CMPLR) -c ./test_cases/case_s21_tan.c
 #add new test_cases for other functions here
 
 check_style:

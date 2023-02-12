@@ -43,7 +43,7 @@ TCase *s21_tc_ceil(void) {
   tcase_add_test(tc_ceil, s21_ceil_positive);
   tcase_add_test(tc_ceil, s21_ceil_negative);
   tcase_add_test(tc_ceil, s21_ceil_null);
-  //  tcase_add_test(tc_ceil, s21_ceil_dbl_max);
+//  tcase_add_test(tc_ceil, s21_ceil_dbl_max);
   tcase_add_test(tc_ceil, s21_ceil_dbl_min);
   tcase_add_test(tc_ceil, s21_ceil_nan);
 

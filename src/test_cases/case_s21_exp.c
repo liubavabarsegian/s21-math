@@ -45,13 +45,13 @@ END_TEST
 
 START_TEST(exp_test_8) {
     double x = 1e-9;
-    ck_assert_ldouble_eq_tol(s21_exp(x), exp(x), S21_EPS);
+    ck_assert_ldouble_eq_tol(s21_exp(x), exp(x), 0.0000001);
 }
 END_TEST
 
 START_TEST(exp_test_9) {
     double x = -1e-9;
-    ck_assert_ldouble_eq_tol(s21_exp(x), exp(x), S21_EPS);
+    ck_assert_ldouble_eq_tol(s21_exp(x), exp(x), 0.0000001);
 }
 END_TEST
 

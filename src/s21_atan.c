@@ -3,14 +3,14 @@
 long double s21_atan(double x) {
     long double res = x;
     long double sum = x;
-    int i = 1;
+    long double  i = 1.0;
     if (x == 1) {
         res = S21_PI / 4;
     } else if (x == -1) {
         res = -S21_PI / 4;
     } else if ((x < 1) && (x > -1)) {
         while (s21_fabs(sum) > S21_EPS) {
-            sum = -1 * sum * x * x * (2 * i - 1) / (2 * i + 1);
+            sum = -1.0 * sum * x * x * (2.0 * i - 1.0) / (2.0 * i + 1.0);
             res += sum;
             i++;
         } 

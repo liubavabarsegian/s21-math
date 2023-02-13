@@ -13,7 +13,7 @@
 #define S21_E 2.71828182845904523536028747
 #define S21_NAN 0.0 / 0.0
 #define S21_PI 3.14159265359
-#define S21_EPS 1e-6
+#define S21_EPS 1e-25
 
 int s21_abs(int x);
 long double s21_ceil(double x);

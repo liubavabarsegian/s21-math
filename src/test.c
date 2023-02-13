@@ -9,9 +9,9 @@ int main(void){
   suite_add_tcase(s_s21_math, s21_tc_abs());
   suite_add_tcase(s_s21_math, s21_tc_exp());
   suite_add_tcase(s_s21_math, s21_tc_fabs());
-  //suite_add_tcase(s_s21_math, s21_tc_acos());
-  //suite_add_tcase(s_s21_math, s21_tc_asin());
-  //suite_add_tcase(s_s21_math, s21_tc_atan());
+  suite_add_tcase(s_s21_math, s21_tc_acos());
+  suite_add_tcase(s_s21_math, s21_tc_asin());
+  suite_add_tcase(s_s21_math, s21_tc_atan());
   suite_add_tcase(s_s21_math, s21_tc_ceil());
   suite_add_tcase(s_s21_math, s21_tc_cos());
   suite_add_tcase(s_s21_math, s21_tc_floor());

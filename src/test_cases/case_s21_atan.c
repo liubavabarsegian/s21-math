@@ -31,7 +31,7 @@ END_TEST
 TCase *s21_tc_atan(void) {
   TCase *tc_atan = tcase_create("s21_atan");
 
-  tcase_add_test(tc_acos, atan_fn);
+  tcase_add_test(tc_atan, atan_fn);
 
   return tc_atan;
 }

@@ -21,7 +21,7 @@ long double s21_log(double x) {
   result += count;
   return result;
 }
-
+/*
 long double s21_pow_int(double base, long long int exp) {
   long double result;
 
@@ -39,3 +39,4 @@ long double s21_pow_int(double base, long long int exp) {
   }
   return result;
 }
+*/

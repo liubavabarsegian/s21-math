@@ -13,7 +13,13 @@ s21_math.a :
 	$(CMPLR) -c s21_sin.c
 	$(CMPLR) -c s21_cos.c
 	$(CMPLR) -c s21_tan.c
-#add new fuction here
+#	$(CMPLR) -c s21_asin.c
+#	$(CMPLR) -c s21_acos.c
+#	$(CMPLR) -c s21_atan.c
+	$(CMPLR) -c s21_pow.c
+	$(CMPLR) -c s21_log.c
+	$(CMPLR) -c s21_fmod.c
+	$(CMPLR) -c s21_sqrt.c
 	ar rc s21_math.a *.o
 	ranlib s21_math.a
 
@@ -22,16 +28,7 @@ test : tcase s21_math.a
 	$(CMPLR) *.o s21_math.a $(TEST_FLAGS) -o test
 
 gcov_report : tcase
-	$(CMPLR) $(GCOV_FLAGS) -c test.c
-	$(CMPLR) $(GCOV_FLAGS) -c s21_abs.c
-	$(CMPLR) $(GCOV_FLAGS) -c s21_exp.c
-	$(CMPLR) $(GCOV_FLAGS) -c s21_fabs.c
-	$(CMPLR) $(GCOV_FLAGS) -c s21_floor.c
-	$(CMPLR) $(GCOV_FLAGS) -c s21_ceil.c
-	$(CMPLR) $(GCOV_FLAGS) -c s21_sin.c
-	$(CMPLR) $(GCOV_FLAGS) -c s21_cos.c
-	$(CMPLR) $(GCOV_FLAGS) -c s21_tan.c
-#add new fuction here
+	$(CMPLR) $(GCOV_FLAGS) -c *.c
 	$(CMPLR) $(GCOV_FLAGS) *.o $(TEST_FLAGS) -o test
 	./test
 	lcov -t "test" -o test.info -c -d .
@@ -47,7 +44,14 @@ tcase :
 	$(CMPLR) -c ./test_cases/case_s21_sin.c
 	$(CMPLR) -c ./test_cases/case_s21_cos.c
 	$(CMPLR) -c ./test_cases/case_s21_tan.c
-#add new test_cases for other functions here
+#	$(CMPLR) -c ./test_cases/case_s21_asin.c
+#	$(CMPLR) -c ./test_cases/case_s21_acos.c
+#	$(CMPLR) -c ./test_cases/case_s21_atan.c
+	$(CMPLR) -c ./test_cases/case_s21_pow.c
+	$(CMPLR) -c ./test_cases/case_s21_log.c
+	$(CMPLR) -c ./test_cases/case_s21_fmod.c
+	$(CMPLR) -c ./test_cases/case_s21_sqrt.c
+#	$(CMPLR) -c ./test_cases/*.c
 
 check_style:
 #cp ../materials/linters/.clang-format ../src

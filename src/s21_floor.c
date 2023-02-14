@@ -2,11 +2,10 @@
 
 long double s21_floor(double x) {
   long double result;
-  if (s21_isinf(x)) {
-    return (long double)x;
-  }
   result = (int)x;
-  if (x < 0 && result != x) {
+  if (s21_isinf(x)) {
+    result = (long double)x;
+  } else if (x < 0 && result != x) {
     result -= 1;
   }
   return result;

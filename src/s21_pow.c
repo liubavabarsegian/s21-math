@@ -2,23 +2,30 @@
 
 //скорее всего не все исходы учла
 long double s21_pow(double base, double exp) {
-  if (exp == 0) return 1;
-  if (base == 1) return 1;
-  if (s21_isinf(base) || s21_isinf(exp)) return S21_NAN;
-  if (base < 0 && exp != (long long int)exp) return S21_NAN;
-
   long double result = 0;
   int is_base_negative = base < 0;
   int is_pow_negative = exp < 0;
-  if (is_base_negative) base = -base;
-  if (is_pow_negative) exp = -exp;
+  if (exp == 0) {
+    result = 1;
+  } else if (base == 1) {
+    result = 1;
+  } else if (s21_isinf(base) || s21_isinf(exp)) {
+    result = S21_NAN;
+  } else if (base < 0 && exp != (long long int) exp) {
+    result = S21_NAN;
+  } else {
+    if (is_base_negative) {
+      base = -base;
+    }
+    if (is_pow_negative) {
+      exp = -exp;
+    } 
   // a^x = e ^(ln (a ^x)) = e ^(x * lna)
-  result = s21_exp(exp * s21_log(base));
-
-  if (is_pow_negative) {
-    result = 1. / result;
+    result = s21_exp(exp * s21_log(base));
+    if (is_pow_negative) {
+      result = 1. / result;
+    }
   }
-
   return result;
 }
 

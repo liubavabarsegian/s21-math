@@ -1,5 +1,5 @@
 CMPLR = gcc -std=c11 -Wall -Werror -Wextra
-TEST_FLAGS = -lcheck -lm
+TEST_FLAGS = -lcheck -lm -lsubunit
 GCOV_FLAGS = -ftest-coverage -fprofile-arcs
 
 all : s21_math.a

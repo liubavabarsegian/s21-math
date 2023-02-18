@@ -57,6 +57,6 @@ TCase *s21_tc_sqrt(void) {
   tcase_add_test(tc_sqrt, s21_sqrt_test_4);
   tcase_add_test(tc_sqrt, s21_sqrt_test_5);
   tcase_add_test(tc_sqrt, s21_sqrt_test_6);
-  
+
   return tc_sqrt;
 }

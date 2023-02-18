@@ -167,7 +167,7 @@ START_TEST(s21_fmod_test_MAIN) {
                            302.0234, 1,       1947.38, 953,     42};
   for (int i = 0; i < 20; i++) {
     ck_assert_ldouble_eq_tol(s21_fmod(f_value[i], s_value[i]),
-                            fmod(f_value[i], s_value[i]), TEST_EPS);
+                             fmod(f_value[i], s_value[i]), TEST_EPS);
   }
 }
 
@@ -195,6 +195,6 @@ TCase *s21_tc_fmod(void) {
   tcase_add_test(tc_fmod, s21_fmod_test_19);
   tcase_add_test(tc_fmod, s21_fmod_test_20);
   tcase_add_test(tc_fmod, s21_fmod_test_MAIN);
-  
+
   return tc_fmod;
 }

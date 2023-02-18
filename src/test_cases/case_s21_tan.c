@@ -61,7 +61,6 @@ END_TEST
 START_TEST(s21_tan_test_10) {
   double x = M_PI_2;
   ck_assert_ldouble_eq_tol(s21_tan(x), tan(x), TEST_EPS);
-
 }
 END_TEST
 

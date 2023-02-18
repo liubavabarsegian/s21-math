@@ -192,8 +192,8 @@ START_TEST(s21_pow_test_27) {
   double x = 0;
   double y = -0.4;
   ck_assert_ldouble_eq(s21_pow(x, y), pow(x, y));
-  //ck_assert_ldouble_infinite(s21_pow(x, y));
-  //ck_assert_ldouble_infinite(pow(x, y));
+  // ck_assert_ldouble_infinite(s21_pow(x, y));
+  // ck_assert_ldouble_infinite(pow(x, y));
 }
 END_TEST
 
@@ -201,8 +201,8 @@ START_TEST(s21_pow_test_28) {
   double x = 0;
   double y = -2;
   ck_assert_ldouble_eq(s21_pow(x, y), pow(x, y));
-  //ck_assert_ldouble_infinite(s21_pow(x, y));
-  //ck_assert_ldouble_infinite(pow(x, y));
+  // ck_assert_ldouble_infinite(s21_pow(x, y));
+  // ck_assert_ldouble_infinite(pow(x, y));
 }
 END_TEST
 
@@ -210,8 +210,8 @@ START_TEST(s21_pow_test_29) {
   double x = 0;
   double y = -2.5;
   ck_assert_ldouble_eq(s21_pow(x, y), pow(x, y));
-  //ck_assert_ldouble_infinite(s21_pow(x, y));
-  //ck_assert_ldouble_infinite(pow(x, y));
+  // ck_assert_ldouble_infinite(s21_pow(x, y));
+  // ck_assert_ldouble_infinite(pow(x, y));
 }
 END_TEST
 
@@ -219,8 +219,8 @@ START_TEST(s21_pow_test_30) {
   double x = 0;
   double y = -3;
   ck_assert_ldouble_eq(s21_pow(x, y), pow(x, y));
-  //ck_assert_ldouble_infinite(s21_pow(x, y));
-  //ck_assert_ldouble_infinite(pow(x, y));
+  // ck_assert_ldouble_infinite(s21_pow(x, y));
+  // ck_assert_ldouble_infinite(pow(x, y));
 }
 END_TEST
 
@@ -228,8 +228,8 @@ START_TEST(s21_pow_test_31) {
   double x = 16894.2629;
   double y = 1545;
   ck_assert_ldouble_eq(s21_pow(x, y), pow(x, y));
-  //ck_assert_ldouble_infinite(s21_pow(x, y));
-  //ck_assert_ldouble_infinite(pow(x, y));
+  // ck_assert_ldouble_infinite(s21_pow(x, y));
+  // ck_assert_ldouble_infinite(pow(x, y));
 }
 END_TEST
 
@@ -244,8 +244,8 @@ START_TEST(s21_pow_test_33) {
   double x = -16894.2629;
   double y = 1545;
   ck_assert_ldouble_eq(s21_pow(x, y), pow(x, y));
-  //ck_assert_ldouble_infinite(s21_pow(x, y));
-  //ck_assert_ldouble_infinite(pow(x, y));
+  // ck_assert_ldouble_infinite(s21_pow(x, y));
+  // ck_assert_ldouble_infinite(pow(x, y));
 }
 END_TEST
 
@@ -511,8 +511,8 @@ START_TEST(s21_pow_test_61) {
   double x = -2.4;
   double y = INFINITY;
   ck_assert_ldouble_eq(s21_pow(x, y), pow(x, y));
-  //ck_assert_ldouble_infinite(s21_pow(x, y));
-  //ck_assert_ldouble_infinite(pow(x, y));
+  // ck_assert_ldouble_infinite(s21_pow(x, y));
+  // ck_assert_ldouble_infinite(pow(x, y));
 }
 END_TEST
 
@@ -520,18 +520,18 @@ START_TEST(s21_pow_test_62) {
   double x = 2.4;
   double y = INFINITY;
   ck_assert_ldouble_eq(s21_pow(x, y), pow(x, y));
-  //ck_assert_ldouble_infinite(s21_pow(x, y));
-  //ck_assert_ldouble_infinite(pow(x, y));
+  // ck_assert_ldouble_infinite(s21_pow(x, y));
+  // ck_assert_ldouble_infinite(pow(x, y));
 }
 END_TEST
 
 START_TEST(s21_pow_test_63) {
   double x = -0.4;
   double y = -INFINITY;
-  //ck_assert_ldouble_eq_tol(s21_pow(x, y), pow(x, y), TEST_EPS);
+  // ck_assert_ldouble_eq_tol(s21_pow(x, y), pow(x, y), TEST_EPS);
   ck_assert_ldouble_eq(s21_pow(x, y), pow(x, y));
-  //ck_assert_ldouble_infinite(s21_pow(x, y));
-  //ck_assert_ldouble_infinite(pow(x, y));
+  // ck_assert_ldouble_infinite(s21_pow(x, y));
+  // ck_assert_ldouble_infinite(pow(x, y));
 }
 END_TEST
 
@@ -539,8 +539,8 @@ START_TEST(s21_pow_test_64) {
   double x = 0.4;
   double y = -INFINITY;
   ck_assert_ldouble_eq(s21_pow(x, y), pow(x, y));
-  //ck_assert_ldouble_infinite(s21_pow(x, y));
-  //ck_assert_ldouble_infinite(pow(x, y));
+  // ck_assert_ldouble_infinite(s21_pow(x, y));
+  // ck_assert_ldouble_infinite(pow(x, y));
 }
 END_TEST
 
@@ -562,8 +562,8 @@ START_TEST(s21_pow_test_67) {
   double x = INFINITY;
   double y = 0.4;
   ck_assert_ldouble_eq(s21_pow(x, y), pow(x, y));
-  //ck_assert_ldouble_infinite(s21_pow(x, y));
-  //ck_assert_ldouble_infinite(pow(x, y));
+  // ck_assert_ldouble_infinite(s21_pow(x, y));
+  // ck_assert_ldouble_infinite(pow(x, y));
 }
 END_TEST
 
@@ -571,8 +571,8 @@ START_TEST(s21_pow_test_68) {
   double x = INFINITY;
   double y = 2;
   ck_assert_ldouble_eq(s21_pow(x, y), pow(x, y));
-  //ck_assert_ldouble_infinite(s21_pow(x, y));
-  //ck_assert_ldouble_infinite(pow(x, y));
+  // ck_assert_ldouble_infinite(s21_pow(x, y));
+  // ck_assert_ldouble_infinite(pow(x, y));
 }
 END_TEST
 
@@ -580,8 +580,8 @@ START_TEST(s21_pow_test_69) {
   double x = INFINITY;
   double y = 2.5;
   ck_assert_ldouble_eq(s21_pow(x, y), pow(x, y));
-  //ck_assert_ldouble_infinite(s21_pow(x, y));
-  //ck_assert_ldouble_infinite(pow(x, y));
+  // ck_assert_ldouble_infinite(s21_pow(x, y));
+  // ck_assert_ldouble_infinite(pow(x, y));
 }
 END_TEST
 
@@ -589,8 +589,8 @@ START_TEST(s21_pow_test_70) {
   double x = INFINITY;
   double y = 3;
   ck_assert_ldouble_eq(s21_pow(x, y), pow(x, y));
-  //ck_assert_ldouble_infinite(s21_pow(x, y));
-  //ck_assert_ldouble_infinite(pow(x, y));
+  // ck_assert_ldouble_infinite(s21_pow(x, y));
+  // ck_assert_ldouble_infinite(pow(x, y));
 }
 END_TEST
 
@@ -625,10 +625,10 @@ END_TEST
 START_TEST(s21_pow_test_75) {
   double x = -INFINITY;
   double y = 0.4;
-  //ck_assert_ldouble_eq_tol(s21_pow(x, y), pow(x, y), TEST_EPS);
+  // ck_assert_ldouble_eq_tol(s21_pow(x, y), pow(x, y), TEST_EPS);
   ck_assert_ldouble_eq(s21_pow(x, y), pow(x, y));
-  //ck_assert_ldouble_infinite(s21_pow(x, y));
-  //ck_assert_ldouble_infinite(pow(x, y));
+  // ck_assert_ldouble_infinite(s21_pow(x, y));
+  // ck_assert_ldouble_infinite(pow(x, y));
 }
 END_TEST
 
@@ -636,8 +636,8 @@ START_TEST(s21_pow_test_76) {
   double x = -INFINITY;
   double y = 2;
   ck_assert_ldouble_eq(s21_pow(x, y), pow(x, y));
-  //ck_assert_ldouble_infinite(s21_pow(x, y));
-  //ck_assert_ldouble_infinite(pow(x, y));
+  // ck_assert_ldouble_infinite(s21_pow(x, y));
+  // ck_assert_ldouble_infinite(pow(x, y));
 }
 END_TEST
 
@@ -645,8 +645,8 @@ START_TEST(s21_pow_test_77) {
   double x = -INFINITY;
   double y = 2.5;
   ck_assert_ldouble_eq(s21_pow(x, y), pow(x, y));
-  //ck_assert_ldouble_infinite(s21_pow(x, y));
-  //ck_assert_ldouble_infinite(pow(x, y));
+  // ck_assert_ldouble_infinite(s21_pow(x, y));
+  // ck_assert_ldouble_infinite(pow(x, y));
 }
 END_TEST
 
@@ -654,8 +654,8 @@ START_TEST(s21_pow_test_78) {
   double x = -INFINITY;
   double y = 3;
   ck_assert_ldouble_eq(s21_pow(x, y), pow(x, y));
-  //ck_assert_ldouble_infinite(s21_pow(x, y));
-  //ck_assert_ldouble_infinite(pow(x, y));
+  // ck_assert_ldouble_infinite(s21_pow(x, y));
+  // ck_assert_ldouble_infinite(pow(x, y));
 }
 END_TEST
 
@@ -691,8 +691,8 @@ START_TEST(s21_pow_test_83) {
   double x = 0.4;
   double y = -9999;
   ck_assert_ldouble_eq(s21_pow(x, y), pow(x, y));
-  //ck_assert_ldouble_infinite(s21_pow(x, y));
-  //ck_assert_ldouble_infinite(pow(x, y));
+  // ck_assert_ldouble_infinite(s21_pow(x, y));
+  // ck_assert_ldouble_infinite(pow(x, y));
 }
 END_TEST
 
@@ -808,6 +808,6 @@ TCase *s21_tc_pow(void) {
   tcase_add_test(tc_pow, s21_pow_test_91);
   tcase_add_test(tc_pow, s21_pow_test_92);
   tcase_add_test(tc_pow, s21_pow_test_93);
-  
+
   return tc_pow;
 }

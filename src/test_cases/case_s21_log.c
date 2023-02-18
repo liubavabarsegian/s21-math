@@ -35,9 +35,9 @@ END_TEST
 
 START_TEST(s21_log_test_6) {
   double x = DBL_MIN;
-  //double x = FLT_MIN;
-  //double x = 0.00000001;
-  //double x = FLT_EPSILON;
+  // double x = FLT_MIN;
+  // double x = 0.00000001;
+  // double x = FLT_EPSILON;
   ck_assert_ldouble_eq_tol(s21_log(x), log(x), TEST_EPS);
 }
 END_TEST
@@ -50,14 +50,14 @@ START_TEST(s21_log_test_7) {
 END_TEST
 
 START_TEST(s21_log_test_8) {
-  double x = INFINITY; 
+  double x = INFINITY;
   ck_assert_ldouble_infinite(s21_log(x));
   ck_assert_ldouble_infinite(log(x));
 }
 END_TEST
 
 START_TEST(s21_log_test_9) {
-  double x = NAN; 
+  double x = NAN;
   ck_assert_ldouble_nan(s21_log(x));
   ck_assert_ldouble_nan(log(x));
 }
@@ -91,6 +91,6 @@ TCase *s21_tc_log(void) {
   tcase_add_test(tc_log, s21_log_test_9);
   tcase_add_test(tc_log, s21_log_test_10);
   tcase_add_test(tc_log, s21_log_test_11);
-  
+
   return tc_log;
 }

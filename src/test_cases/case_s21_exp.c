@@ -20,67 +20,67 @@ START_TEST(s21_exp_test_3) {
 END_TEST
 
 START_TEST(s21_exp_test_4) {
-    double x = 999999999999;
-    ck_assert_ldouble_infinite(s21_exp(x));
-    ck_assert_ldouble_infinite(exp(x));
+  double x = 999999999999;
+  ck_assert_ldouble_infinite(s21_exp(x));
+  ck_assert_ldouble_infinite(exp(x));
 }
 END_TEST
 
 START_TEST(s21_exp_test_5) {
-    double x = -999999999999;
-    ck_assert_ldouble_eq_tol(s21_exp(x), exp(x), TEST_EPS);
+  double x = -999999999999;
+  ck_assert_ldouble_eq_tol(s21_exp(x), exp(x), TEST_EPS);
 }
 END_TEST
 
 START_TEST(s21_exp_test_6) {
-    double x = DBL_MAX;
-    ck_assert_ldouble_infinite(s21_exp(x));
-    ck_assert_ldouble_infinite(exp(x));
+  double x = DBL_MAX;
+  ck_assert_ldouble_infinite(s21_exp(x));
+  ck_assert_ldouble_infinite(exp(x));
 }
 END_TEST
 
 START_TEST(s21_exp_test_7) {
-    double x = -DBL_MAX;
-    ck_assert_ldouble_eq_tol(s21_exp(x), exp(x), TEST_EPS);
+  double x = -DBL_MAX;
+  ck_assert_ldouble_eq_tol(s21_exp(x), exp(x), TEST_EPS);
 }
 END_TEST
 
 START_TEST(s21_exp_test_8) {
-    double x = 1e-9;
-    ck_assert_ldouble_eq_tol(s21_exp(x), exp(x), TEST_EPS);
+  double x = 1e-9;
+  ck_assert_ldouble_eq_tol(s21_exp(x), exp(x), TEST_EPS);
 }
 END_TEST
 
 START_TEST(s21_exp_test_9) {
-    double x = -1e-9;
-    ck_assert_ldouble_eq_tol(s21_exp(x), exp(x), TEST_EPS);
+  double x = -1e-9;
+  ck_assert_ldouble_eq_tol(s21_exp(x), exp(x), TEST_EPS);
 }
 END_TEST
 
 START_TEST(s21_exp_test_10) {
-    double x = NAN;
-    ck_assert_ldouble_nan(s21_exp(x));
-    ck_assert_ldouble_nan(exp(x));
+  double x = NAN;
+  ck_assert_ldouble_nan(s21_exp(x));
+  ck_assert_ldouble_nan(exp(x));
 }
 END_TEST
 
 START_TEST(s21_exp_test_11) {
-    double x = -NAN;
-    ck_assert_ldouble_nan(s21_exp(x));
-    ck_assert_ldouble_nan(exp(x));
+  double x = -NAN;
+  ck_assert_ldouble_nan(s21_exp(x));
+  ck_assert_ldouble_nan(exp(x));
 }
 END_TEST
 
 START_TEST(s21_exp_test_12) {
-    double x = INFINITY;
-    ck_assert_ldouble_infinite(s21_exp(x));
-    ck_assert_ldouble_infinite(exp(x));
+  double x = INFINITY;
+  ck_assert_ldouble_infinite(s21_exp(x));
+  ck_assert_ldouble_infinite(exp(x));
 }
 END_TEST
 
 START_TEST(s21_exp_test_13) {
-    double x = -INFINITY;
-    ck_assert_ldouble_eq_tol(s21_exp(x), exp(x), TEST_EPS);
+  double x = -INFINITY;
+  ck_assert_ldouble_eq_tol(s21_exp(x), exp(x), TEST_EPS);
 }
 END_TEST
 
@@ -100,6 +100,6 @@ TCase *s21_tc_exp(void) {
   tcase_add_test(tc_exp, s21_exp_test_11);
   tcase_add_test(tc_exp, s21_exp_test_12);
   tcase_add_test(tc_exp, s21_exp_test_13);
-  
+
   return tc_exp;
 }

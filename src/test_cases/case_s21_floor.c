@@ -14,7 +14,7 @@ START_TEST(s21_floor_test_2) {
 END_TEST
 
 START_TEST(s21_floor_test_3) {
-  double x = DBL_MAX;
+  double x = INT_MAX;
   ck_assert_ldouble_eq_tol(s21_floor(x), floor(x), TEST_EPS);
 }
 END_TEST

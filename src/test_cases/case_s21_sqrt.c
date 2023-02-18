@@ -10,8 +10,9 @@ END_TEST
 
 START_TEST(s21_sqrt_test_2) {
   double x = INFINITY;
-  ck_assert_ldouble_infinite(s21_sqrt(x));
-  ck_assert_ldouble_infinite(sqrt(x));
+  ck_assert_ldouble_eq(s21_sqrt(x), sqrt(x));
+  // ck_assert_ldouble_infinite(s21_sqrt(x));
+  // ck_assert_ldouble_infinite(sqrt(x));
 }
 END_TEST
 

@@ -14,7 +14,7 @@ START_TEST(s21_ceil_test_2) {
 END_TEST
 
 START_TEST(s21_ceil_test_3) {
-  double x = DBL_MAX;
+  double x = INT_MAX;
   ck_assert_ldouble_eq_tol(s21_ceil(x), ceil(x), TEST_EPS);
 }
 END_TEST

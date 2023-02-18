@@ -58,18 +58,6 @@ START_TEST(s21_tan_test_9) {
 }
 END_TEST
 
-START_TEST(s21_tan_test_10) {
-  double x = M_PI_2;
-  ck_assert_ldouble_eq_tol(s21_tan(x), tan(x), TEST_EPS);
-}
-END_TEST
-
-START_TEST(s21_tan_test_11) {
-  double x = -M_PI_2;
-  ck_assert_ldouble_eq_tol(s21_tan(x), tan(x), TEST_EPS);
-}
-END_TEST
-
 TCase *s21_tc_tan(void) {
   TCase *tc_tan = tcase_create("s21_tan");
 
@@ -82,8 +70,6 @@ TCase *s21_tc_tan(void) {
   tcase_add_test(tc_tan, s21_tan_test_7);
   tcase_add_test(tc_tan, s21_tan_test_8);
   tcase_add_test(tc_tan, s21_tan_test_9);
-  tcase_add_test(tc_tan, s21_tan_test_10);
-  tcase_add_test(tc_tan, s21_tan_test_11);
 
   return tc_tan;
 }

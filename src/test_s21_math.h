@@ -1,14 +1,15 @@
-#include "s21_math.h"
 #include <check.h>
 #include <limits.h>
 #include <math.h>
 #include <stdlib.h>
 
+#include "s21_math.h"
+
 #ifndef M_PI
 #define M_PI 3.14159265358979323846
 #endif
 #ifndef M_PI_2
-#define M_PI_2 1.57079632679489661923
+#define M_PI_2 3.14159265358979323846 / 2
 #endif
 #define TEST_EPS 0.000001
 

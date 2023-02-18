@@ -35,6 +35,9 @@ END_TEST
 
 START_TEST(s21_log_test_6) {
   double x = DBL_MIN;
+  //double x = FLT_MIN;
+  //double x = 0.00000001;
+  //double x = FLT_EPSILON;
   ck_assert_ldouble_eq_tol(s21_log(x), log(x), TEST_EPS);
 }
 END_TEST

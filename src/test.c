@@ -2,7 +2,7 @@
 
 //#include <stdio.h>
 
-int main(void){
+int main(void) {
   int failed = 0;
   Suite *s_s21_math = suite_create("s21_math.h");
 

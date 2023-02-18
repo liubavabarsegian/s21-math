@@ -1,10 +1,10 @@
 #ifndef MATH_H_
 #define MATH_H_
 
+#include <float.h>
 #include <limits.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <float.h>
 
 #define s21_isnan(x) __builtin_isnan(x)
 #define s21_isinf(x) __builtin_isinf(x)
@@ -12,7 +12,7 @@
 #define S21_NEGATIVE_INFINITY -S21_INFINITY
 #define S21_E 2.71828182845904523536028747
 #define S21_NAN 0.0 / 0.0
-#define S21_PI 3.14159265359
+#define S21_PI 3.14159265358979323846
 #define S21_EPS 1e-25
 
 int s21_abs(int x);

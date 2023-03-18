@@ -1,16 +1,11 @@
 CMPLR = gcc -std=c11 -Wall -Werror -Wextra
-TEST_FLAGS = -lcheck -lm -lsubunit
+TEST_FLAGS = -lcheck -lm -lsubunit -lpthread
 GCOV_FLAGS = -ftest-coverage -fprofile-arcs
 
 all : s21_math.a
 
 s21_math.a :
-	$(CMPLR) -c s21_abs.c
-	$(CMPLR) -c s21_exp.c
-	$(CMPLR) -c s21_fabs.c
-	$(CMPLR) -c s21_floor.c
-	$(CMPLR) -c s21_ceil.c
-#add new fuction here
+	$(CMPLR) -c s21*.c
 	ar rc s21_math.a *.o
 	ranlib s21_math.a
 
@@ -19,13 +14,7 @@ test : tcase s21_math.a
 	$(CMPLR) *.o s21_math.a $(TEST_FLAGS) -o test
 
 gcov_report : tcase
-	$(CMPLR) $(GCOV_FLAGS) -c test.c
-	$(CMPLR) $(GCOV_FLAGS) -c s21_abs.c
-	$(CMPLR) $(GCOV_FLAGS) -c s21_exp.c
-	$(CMPLR) $(GCOV_FLAGS) -c s21_fabs.c
-	$(CMPLR) $(GCOV_FLAGS) -c s21_floor.c
-	$(CMPLR) $(GCOV_FLAGS) -c s21_ceil.c
-#add new fuction here
+	$(CMPLR) $(GCOV_FLAGS) -c *.c
 	$(CMPLR) $(GCOV_FLAGS) *.o $(TEST_FLAGS) -o test
 	./test
 	lcov -t "test" -o test.info -c -d .
@@ -33,12 +22,7 @@ gcov_report : tcase
 	open report/index.html
 
 tcase :
-	$(CMPLR) -c ./test_cases/case_s21_abs.c
-	$(CMPLR) -c ./test_cases/case_s21_exp.c
-	$(CMPLR) -c ./test_cases/case_s21_fabs.c
-	$(CMPLR) -c ./test_cases/case_s21_floor.c
-	$(CMPLR) -c ./test_cases/case_s21_ceil.c
-#add new test_cases for other functions here
+	$(CMPLR) -c ./test_cases/*.c
 
 check_style:
 #cp ../materials/linters/.clang-format ../src
@@ -52,3 +36,5 @@ clean :
 	rm -rf *.o *.a test *.gcno *.gcda *.info report
 
 rebuild : clean all
+
+.PHONY: all clean s21_math.a test gcov_report tcase check_style rebuild 
